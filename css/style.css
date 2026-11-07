@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import url('media.css');
-
 * {
 	padding: 0;
 	margin: 0;
@@ -11,9 +9,9 @@
 }
 
 :root {
-	--header-bg: #FFF400;
-	--header-border: #D1C800;
-	--swiss-accent: #003DDD;
+	--component-bg: #FFF400;
+	--component-border: #D1C800;
+	--component-accent: #003DDD;
 	--text-main: #111111;
 	--text-muted: #333333;
 }
@@ -25,15 +23,16 @@ body {
 
 /* HEADER */
 .header {
-	background-color: var(--header-bg);
-	border-bottom: 2px solid var(--header-border);
+	background-color: var(--component-bg);
+	border-bottom: 2px solid var(--component-border);
 	width: 100%;
 	position: static;
 }
 
 .header-container {
-	width: 100%;
-	padding: 8px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 16px 20px;
 	display: flex;
 	align-items: center;
 	gap: 16px;
@@ -49,16 +48,18 @@ body {
 .header-left .logo img {
 	display: block;
 	height: auto;
-	width: 55px;
+	width: 65px;
 	border-radius: 50%;
 	border: 2px solid transparent;
-	transition: all 0.1s ease-in-out;
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+		border-color 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 .header-left .logo img:hover {
-	border: 2px solid var(--swiss-accent);
-	transform: scale(1.08);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	border-color: var(--component-accent);
+	transform: translateY(-2px) scale(1.05);
+	box-shadow: 0 6px 14px rgba(0, 61, 221, 0.25);
 }
 
 .header-right {
@@ -68,13 +69,16 @@ body {
 	gap: 6px;
 }
 
+.header-right .hairline-rule {
+	margin-bottom: 2px;
+}
+
 /* Header Top Section */
 .header-top {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-bottom: 4px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .school-name {
@@ -82,46 +86,47 @@ body {
 	font-weight: 800;
 	font-size: 1.1rem;
 	letter-spacing: 0.5px;
-	color: var(--swiss-accent);
+	color: var(--component-accent);
 }
 
 .social-links {
 	display: flex;
 	align-items: center;
-	gap: 5px;
+	gap: 8px;
 }
 
 .social-links a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 25px;
-	height: 25px;
-	background-color: var(--header-bg);
-	border: 1px solid var(--swiss-accent);
-	border-radius: 15%;
-	color: var(--swiss-accent);
-	font-size: 0.9rem;
+	width: 32px;
+	height: 32px;
+	background-color: var(--component-bg);
+	border: 1.5px solid var(--component-accent);
+	border-radius: 8px;
+	color: var(--component-accent);
+	font-size: 1.05rem;
+	/* Slightly larger icon */
 	text-decoration: none;
-	transition: all 0.1s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+	transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .social-links a:hover {
-	background-color: var(--swiss-accent);
+	background-color: var(--component-accent);
 	color: #FFFFFF;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 12px rgba(0, 61, 221, 0.3);
 }
 
-/* 1. Setup the main element */
 [data-tooltip] {
 	position: relative;
 	cursor: pointer;
 }
 
-/* 2. Create and style the tooltip box */
 [data-tooltip]::after {
 	content: attr(data-tooltip);
 
-	/* Hides it by default */
 	position: absolute;
 	left: 50%;
 	top: 110%;
@@ -130,7 +135,6 @@ body {
 	pointer-events: none;
 	transition: all 0.1s ease-in-out;
 
-	/* Styling */
 	background-color: #222;
 	color: #fff;
 	padding: 6px 7px;
@@ -142,13 +146,11 @@ body {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 3. Reveal the tooltip on hover */
 [data-tooltip]:hover::after {
 	opacity: 1;
 	transform: translateX(-50%) scale(1);
 }
 
-/* Header Bottom Section */
 .header-bottom {
 	display: flex;
 	justify-content: space-between;
@@ -173,7 +175,7 @@ body {
 }
 
 .contact-info i {
-	color: var(--swiss-accent);
+	color: var(--component-accent);
 }
 
 /* Navigation Links */
@@ -184,40 +186,56 @@ body {
 }
 
 .navlinks a {
+	position: relative;
 	font-size: 0.8rem;
 	font-weight: 700;
 	color: var(--text-main);
 	text-decoration: none;
 	letter-spacing: 0.3px;
-	transition: color 0.2s ease;
+	padding: 4px 0;
+	transition: color 0.3s ease;
+}
+
+.navlinks a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0%;
+	height: 2px;
+	background-color: var(--component-accent);
+	border-radius: 4px;
+	transform: translateX(-50%);
+	transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .navlinks a:hover {
-	color: var(--swiss-accent);
+	color: var(--component-accent);
 }
 
-/* MAIN */
+.navlinks a:hover::before {
+	width: 100%;
+}
+
 main {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-.empty {
-	width: 100%;
-	/* Forces the section to span at least the full viewport height minus the approximate header height */
 	min-height: calc(100vh - 120px);
 	background-color: #F7F7F8;
 }
 
+section {}
+
 /* FOOTER */
 .footer {
-	background-color: var(--swiss-accent);
+	background-color: var(--component-bg);
+	border-top: 2px solid var(--component-border);
 	width: 100%;
-	padding: 24px 20px 16px;
+	padding: 16px 20px;
 }
 
 .footer-container {
+	max-width: 1200px;
+	margin: 0 auto;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -241,7 +259,7 @@ main {
 	font-weight: 800;
 	font-size: 1.5rem;
 	letter-spacing: 0.5px;
-	color: var(--header-bg);
+	color: var(--component-accent);
 	margin: 0;
 	text-transform: uppercase;
 	line-height: 1.5;
@@ -255,16 +273,37 @@ main {
 }
 
 .footer-nav a {
+	position: relative;
 	font-size: 0.8rem;
 	font-weight: 700;
-	color: #FFFFFF;
+	color: var(--text-main);
 	text-decoration: none;
 	letter-spacing: 0.3px;
-	transition: opacity 0.1s ease;
+	padding: 4px 0;
+	transition: color 0.3s ease;
+}
+
+.footer-nav a::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--component-accent);
+	border-radius: 4px;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .footer-nav a:hover {
-	color: var(--header-bg);
+	color: var(--component-accent);
+}
+
+.footer-nav a:hover::before {
+	transform: scaleX(1);
+	transform-origin: left;
 }
 
 .footer-action {
@@ -278,17 +317,71 @@ main {
 	width: 40px;
 	height: 40px;
 	background-color: transparent;
-	border: 1px solid #FFFFFF;
-	color: #FFFFFF;
+	border: 1px solid var(--component-accent);
+	color: var(--component-accent);
 	cursor: pointer;
-	border-radius: 0;
+	border-radius: 15%;
 	transition: all 0.1s ease-in-out;
 }
 
 .back-to-top:hover {
-	background-color: var(--header-bg);
-	border-color: var(--header-bg);
-	color: var(--swiss-accent);
+	background-color: var(--component-accent);
+	color: #FFFFFF;
+}
+
+/* FOOTER COLUMNS LAYOUT */
+.footer-columns {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	padding: 16px 0;
+}
+
+.footer-col {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.footer-col-title {
+	font-family: "Poppins", sans-serif;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--component-accent);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.footer-col-text {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	line-height: 1.5;
+}
+
+.footer-col-text i,
+.footer-col-list i {
+	color: var(--component-accent);
+	margin-right: 6px;
+}
+
+.footer-col-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	font-size: 0.8rem;
+	color: var(--text-muted);
+}
+
+.footer-col-list li {
+	display: flex;
+	align-items: center;
+	line-height: 1.4;
+}
+
+/* Social links position below contacts */
+.footer-socials {
+	margin-top: 6px;
 }
 
 .footer-dividers {
@@ -301,7 +394,7 @@ main {
 .hairline-rule {
 	width: 100%;
 	height: 1px;
-	background-color: #FFFFFF;
+	background-color: var(--component-border);
 }
 
 .footer-bottom {
@@ -309,6 +402,7 @@ main {
 	justify-content: space-between;
 	font-size: 0.7rem;
 	font-weight: 600;
-	color: rgba(255, 255, 255, 0.7);
+	color: rgba(0, 0, 0, 0.7);
 	letter-spacing: 0.5px;
 }
+
