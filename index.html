@@ -10,11 +10,12 @@
 </head>
 
 <body>
+	<!-- HEADER -->
 	<header class="header" id="header">
 		<div class="header-container">
 			<div class="header-left">
 				<a href="index.html" class="logo" data-tooltip="Home">
-					<img src="images/logo.png" alt="Philippine American Progress School" width="65">
+					<img src="/images/logo.png" alt="Philippine American Progress School" width="65">
 				</a>
 			</div>
 
@@ -34,38 +35,328 @@
 				<div class="hairline-rule"></div>
 
 				<div class="header-bottom">
-
 					<nav class="navlinks">
-						<a href="#">ABOUT US</a>
-						<a href="#">ADMINISTRATION</a>
-						<a href="#">ACADEMICS</a>
-						<a href="#">RESOURCES</a>
-						<a href="#">CONTACT US</a>
+						<a href="about.html">ABOUT US</a>
+						<a href="admin.html">ADMINISTRATION</a>
+						<a href="academics.html">ACADEMICS</a>
+						<a href="contact.html">CONTACT US</a>
 					</nav>
 				</div>
 			</div>
 		</div>
 	</header>
 
-	<!-- CONTENT HERE -->
-	<main>
-		<section>
+	<!-- MAIN CONTENT -->
+	<main class="home-main">
 
+		<!-- HERO SECTION -->
+		<section class="hero" aria-labelledby="hero-title">
+			<div class="hero__bg-media" aria-hidden="true"></div>
+			<div class="hero__content-wrapper">
+				<div class="hero__content">
+					<h1 id="hero-title" class="hero__title">Empowering the Leaders of Tomorrow</h1>
+					<p class="hero__subtitle">Awakening and nurturing the gift of genius in every child through leadership,
+						collaboration, and excellence.</p>
+					<div class="hero__actions">
+						<a href="#" class="btn btn--primary hero__btn">ENROLL NOW</a>
+						<a href="#" class="btn btn--outline hero__btn">CONTACT US</a>
+					</div>
+				</div>
+			</div>
 		</section>
-	</main>
-	<!-- CONTENT HERE -->
 
+		<!-- SCHOOL POPULATION -->
+		<section class="portals" aria-label="School Population">
+			<div class="portals__container">
+				<div class="portal-card">
+					<div class="portal-card__icon"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></div>
+					<h3 class="portal-card__title">500+</h3>
+					<p class="portal-card__desc">Enrolled Students</p>
+				</div>
+				<div class="portal-card">
+					<div class="portal-card__icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
+					<h3 class="portal-card__title">35+</h3>
+					<p class="portal-card__desc">Dedicated Faculty</p>
+				</div>
+				<div class="portal-card">
+					<div class="portal-card__icon"><i class="fa-solid fa-users-gear" aria-hidden="true"></i></div>
+					<h3 class="portal-card__title">20+</h3>
+					<p class="portal-card__desc">Support Staff</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SCHOOL NEWS -->
+		<section class="bulletin-section" aria-labelledby="news-title">
+			<div class="bulletin__container">
+				<div class="bulletin__header">
+					<h2 id="news-title" class="section-title">School News</h2>
+					<div class="bulletin__controls">
+						<button class="bulletin__arrow bulletin__arrow--prev" id="newsPrev" aria-label="Previous News"><i
+								class="fa-solid fa-chevron-left"></i></button>
+						<button class="bulletin__arrow bulletin__arrow--next" id="newsNext" aria-label="Next News"><i
+								class="fa-solid fa-chevron-right"></i></button>
+					</div>
+				</div>
+
+				<div class="bulletin__track" id="newsTrack">
+					<article class="bulletin-card">
+						<div class="bulletin-card__image-wrapper">
+							<img src="https://blocks.astratic.com/img/general-img-landscape.png" alt="Robotics Team"
+								class="bulletin-card__image" loading="lazy">
+						</div>
+						<div class="bulletin-card__content">
+							<span class="bulletin-card__category">Academic Excellence</span>
+							<h3 class="bulletin-card__title"><a href="#">Robotics Team Wins Regional Championship</a></h3>
+							<p class="bulletin-card__summary">Our talented students took first place in the annual regional robotics
+								competition held last week.</p>
+							<span class="bulletin-card__date"><i class="fa-regular fa-calendar"></i> Oct 28, 2026</span>
+						</div>
+					</article>
+
+					<article class="bulletin-card">
+						<div class="bulletin-card__image-wrapper">
+							<img src="https://blocks.astratic.com/img/general-img-landscape.png" alt="Learning Commons"
+								class="bulletin-card__image" loading="lazy">
+						</div>
+						<div class="bulletin-card__content">
+							<span class="bulletin-card__category">Campus Life</span>
+							<h3 class="bulletin-card__title"><a href="#">Ribbon Cutting for New Learning Commons</a></h3>
+							<p class="bulletin-card__summary">Faculty and students celebrated the official opening of our newly
+								renovated library facility.</p>
+							<span class="bulletin-card__date"><i class="fa-regular fa-calendar"></i> Nov 02, 2026</span>
+						</div>
+					</article>
+
+					<article class="bulletin-card">
+						<div class="bulletin-card__image-wrapper">
+							<img src="https://blocks.astratic.com/img/general-img-landscape.png" alt="Science Fair Winners"
+								class="bulletin-card__image" loading="lazy">
+						</div>
+						<div class="bulletin-card__content">
+							<span class="bulletin-card__category">Achievement</span>
+							<h3 class="bulletin-card__title"><a href="#">PAPSI Students Awarded in National Math Quiz Bee</a></h3>
+							<p class="bulletin-card__summary">Three junior high school students bagged gold medals in the regional
+								mathematics olympiad.</p>
+							<span class="bulletin-card__date"><i class="fa-regular fa-calendar"></i> Nov 05, 2026</span>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- SCHOOL BULLETIN -->
+		<section class="bulletin-section bulletin-section--alt" aria-labelledby="bulletin-title">
+			<div class="bulletin__container">
+				<div class="bulletin__header">
+					<h2 id="bulletin-title" class="section-title">School Bulletin</h2>
+					<div class="bulletin__controls">
+						<button class="bulletin__arrow bulletin__arrow--prev" id="bulletinPrev"
+							aria-label="Previous Announcement"><i class="fa-solid fa-chevron-left"></i></button>
+						<button class="bulletin__arrow bulletin__arrow--next" id="bulletinNext" aria-label="Next Announcement"><i
+								class="fa-solid fa-chevron-right"></i></button>
+					</div>
+				</div>
+
+				<div class="bulletin__track" id="bulletinTrack">
+					<article class="bulletin-card">
+						<div class="bulletin-card__image-wrapper">
+							<img src="https://blocks.astratic.com/img/general-img-landscape.png" alt="Sportsfest Notice"
+								class="bulletin-card__image" loading="lazy">
+						</div>
+						<div class="bulletin-card__content">
+							<span class="bulletin-card__category">Announcement</span>
+							<h3 class="bulletin-card__title"><a href="#">Intramural Sportsfest 2026 Schedule & Guidelines</a></h3>
+							<p class="bulletin-card__summary">Important reminders for all participating houses and athletes for the
+								upcoming sportsfest.</p>
+							<span class="bulletin-card__date"><i class="fa-regular fa-calendar"></i> Nov 10, 2026</span>
+						</div>
+					</article>
+
+					<article class="bulletin-card">
+						<div class="bulletin-card__image-wrapper">
+							<img src="https://blocks.astratic.com/img/general-img-landscape.png" alt="Science Fair Notice"
+								class="bulletin-card__image" loading="lazy">
+						</div>
+						<div class="bulletin-card__content">
+							<span class="bulletin-card__category">Upcoming Event</span>
+							<h3 class="bulletin-card__title"><a href="#">Annual Science & Technology Exhibit Submission</a></h3>
+							<p class="bulletin-card__summary">Final project proposals for elementary and high school learners are due
+								next week.</p>
+							<span class="bulletin-card__date"><i class="fa-regular fa-calendar"></i> Nov 15, 2026</span>
+						</div>
+					</article>
+
+					<article class="bulletin-card">
+						<div class="bulletin-card__image-wrapper">
+							<img src="https://blocks.astratic.com/img/general-img-landscape.png" alt="Enrollment Notice"
+								class="bulletin-card__image" loading="lazy">
+						</div>
+						<div class="bulletin-card__content">
+							<span class="bulletin-card__category">Admissions</span>
+							<h3 class="bulletin-card__title"><a href="#">Second Semester Early Registration Open</a></h3>
+							<p class="bulletin-card__summary">Parents may now secure enrollment slots for incoming transfer students
+								at the Admin Office.</p>
+							<span class="bulletin-card__date"><i class="fa-regular fa-calendar"></i> Nov 20, 2026</span>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- SCHOOL CALENDAR -->
+		<section class="calendar-section" aria-labelledby="calendar-title">
+			<div class="calendar__container">
+				<div class="calendar__header">
+					<div>
+						<h2 id="calendar-title" class="section-title">School Calendar</h2>
+						<p class="calendar__subtitle">Keep track of key academic dates, holidays, and campus events.</p>
+					</div>
+					<div class="calendar__month-selector">
+						<button class="calendar__month-btn"><i class="fa-solid fa-chevron-left"></i></button>
+						<span class="calendar__current-month">November 2026</span>
+						<button class="calendar__month-btn"><i class="fa-solid fa-chevron-right"></i></button>
+					</div>
+				</div>
+
+				<div class="calendar__wrapper">
+					<div class="calendar-grid">
+						<div class="calendar-day-header">Sun</div>
+						<div class="calendar-day-header">Mon</div>
+						<div class="calendar-day-header">Tue</div>
+						<div class="calendar-day-header">Wed</div>
+						<div class="calendar-day-header">Thu</div>
+						<div class="calendar-day-header">Fri</div>
+						<div class="calendar-day-header">Sat</div>
+
+						<div class="calendar-day is-empty"></div>
+						<div class="calendar-day is-empty"></div>
+						<div class="calendar-day">1</div>
+						<div class="calendar-day">2</div>
+						<div class="calendar-day">3</div>
+						<div class="calendar-day">4</div>
+						<div class="calendar-day">5</div>
+						<div class="calendar-day">6</div>
+						<div class="calendar-day">7</div>
+						<div class="calendar-day">8</div>
+						<div class="calendar-day">9</div>
+						<div class="calendar-day">10</div>
+						<div class="calendar-day">11</div>
+						<div class="calendar-day">12</div>
+						<div class="calendar-day">13</div>
+						<div class="calendar-day">14</div>
+						<div class="calendar-day">15</div>
+						<div class="calendar-day">16</div>
+						<div class="calendar-day">17</div>
+						<div class="calendar-day">18</div>
+						<div class="calendar-day">19</div>
+						<div class="calendar-day">20</div>
+						<div class="calendar-day">21</div>
+						<div class="calendar-day">22</div>
+						<div class="calendar-day">23</div>
+						<div class="calendar-day">24</div>
+						<div class="calendar-day">25</div>
+						<div class="calendar-day">26</div>
+						<div class="calendar-day">27</div>
+						<div class="calendar-day">28</div>
+						<div class="calendar-day">29</div>
+						<div class="calendar-day has-event" data-tooltip="Bonifacio Day">30 <span class="event-dot"></span></div>
+					</div>
+
+					<div class="calendar__highlights">
+						<h3 class="calendar__highlights-title">Upcoming Highlights</h3>
+						<ul class="calendar__event-list">
+							<li class="calendar-event-item">
+								<div class="event-date-badge"><span>NOV</span><strong>30</strong></div>
+								<div class="event-info">
+									<h4>Bonifacio Day</h4>
+									<p><i class="fa-solid fa-calendar-xmark"></i> National Holiday</p>
+								</div>
+							</li>
+							<li class="calendar-event-item">
+								<div class="event-date-badge"><span>DEC</span><strong>11</strong></div>
+								<div class="event-info">
+									<h4>Founding Anniversary</h4>
+									<p><i class="fa-regular fa-clock"></i>8:00 AM - 4:00 PM</p>
+								</div>
+							</li>
+							<li class="calendar-event-item">
+								<div class="event-date-badge"><span>DEC</span><strong>14</strong></div>
+								<div class="event-info">
+									<h4>Christmas Break</h4>
+									<p><i class="fa-regular fa-clock"></i> December 14, 2026 - January 3, 2027</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- COMMUNITY SPOTLIGHT -->
+		<section class="spotlight" aria-labelledby="spotlight-title">
+			<div class="spotlight__container">
+				<div class="spotlight__welcome">
+					<h2 id="spotlight-title" class="section-title">Welcome from the Principal</h2>
+					<figure class="spotlight__media">
+						<div class="video-container">
+							<video class="video-container__video" controls
+								poster="https://blocks.astratic.com/img/general-img-landscape.png">
+								<source src="https://blocks.astratic.com/videos/general-video.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+						</div>
+						<figcaption class="spotlight__caption">Dr. Jane Doe shares our vision for the academic year.</figcaption>
+					</figure>
+				</div>
+
+				<div class="spotlight__testimonials">
+					<h2 class="section-title">Voices of Our Community</h2>
+					<div class="testimonial-carousel" aria-label="Community Testimonials">
+						<div class="testimonial-carousel__track">
+							<blockquote class="testimonial-card">
+								<div class="testimonial-card__quote-icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+								</div>
+								<p class="testimonial-card__text">"The supportive environment and dedicated teachers have helped my son
+									thrive both academically and socially."</p>
+								<footer class="testimonial-card__author">
+									<img src="https://blocks.astratic.com/img/user-img-small.png" alt="Sarah Jenkins"
+										class="testimonial-card__avatar">
+									<div class="testimonial-card__meta">
+										<strong class="testimonial-card__name">Sarah Jenkins</strong>
+										<span class="testimonial-card__role">Parent, Class of '28</span>
+									</div>
+								</footer>
+							</blockquote>
+						</div>
+						<div class="testimonial-carousel__controls">
+							<button class="testimonial-carousel__arrow testimonial-carousel__arrow--prev"><i
+									class="fa-solid fa-chevron-left"></i></button>
+							<div class="testimonial-carousel__dots">
+								<button class="testimonial-carousel__dot is-active"></button>
+								<button class="testimonial-carousel__dot"></button>
+							</div>
+							<button class="testimonial-carousel__arrow testimonial-carousel__arrow--next"><i
+									class="fa-solid fa-chevron-right"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- FOOTER -->
 	<footer class="footer">
 		<div class="footer-container">
 			<div class="footer-top">
 				<div class="footer-content">
 					<h2 class="footer-slogan">Nurturing brilliant minds to lead and unite.</h2>
 					<nav class="footer-nav">
-						<a href="#">ABOUT</a>
-						<a href="#">ADMINISTRATION</a>
-						<a href="#">ACADEMICS</a>
-						<a href="#">RESOURCES</a>
-						<a href="#">CONTACT</a>
+						<a href="about.html">ABOUT US</a>
+						<a href="admin.html">ADMINISTRATION</a>
+						<a href="academics.html">ACADEMICS</a>
+						<a href="contact.html">CONTACT US</a>
 					</nav>
 				</div>
 

@@ -32,7 +32,7 @@ body {
 .header-container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 16px 20px;
+	padding: 10px 20px;
 	display: flex;
 	align-items: center;
 	gap: 16px;
@@ -73,7 +73,6 @@ body {
 	margin-bottom: 2px;
 }
 
-/* Header Top Section */
 .header-top {
 	display: flex;
 	justify-content: space-between;
@@ -106,7 +105,6 @@ body {
 	border-radius: 8px;
 	color: var(--component-accent);
 	font-size: 1.05rem;
-	/* Slightly larger icon */
 	text-decoration: none;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 	transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -126,7 +124,6 @@ body {
 
 [data-tooltip]::after {
 	content: attr(data-tooltip);
-
 	position: absolute;
 	left: 50%;
 	top: 110%;
@@ -134,7 +131,6 @@ body {
 	opacity: 0;
 	pointer-events: none;
 	transition: all 0.1s ease-in-out;
-
 	background-color: #222;
 	color: #fff;
 	padding: 6px 7px;
@@ -153,32 +149,13 @@ body {
 
 .header-bottom {
 	display: flex;
-	justify-content: space-between;
+	justify-content: end;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 12px;
 }
 
-.contact-info {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	font-size: 0.7rem;
-	font-weight: 600;
-	color: var(--text-muted);
-}
-
-.contact-info span {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-}
-
-.contact-info i {
-	color: var(--component-accent);
-}
-
-/* Navigation Links */
+/* NAVIGATION LINKS */
 .navlinks {
 	display: flex;
 	align-items: center;
@@ -217,20 +194,522 @@ body {
 	width: 100%;
 }
 
+/* MAIN CONTENT */
 main {
 	width: 100%;
 	min-height: calc(100vh - 120px);
 	background-color: #F7F7F8;
 }
 
-section {}
+.home-main {
+	width: 100%;
+	background-color: #F7F7F8;
+}
+
+.section-title {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.8rem;
+	color: var(--component-accent);
+	font-weight: 800;
+}
+
+.btn {
+	padding: 14px 28px;
+	border-radius: 8px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.btn--primary {
+	background-color: var(--component-accent);
+	color: #FFFFFF;
+	border: 2px solid var(--component-accent);
+}
+
+.btn--primary:hover {
+	background-color: #002896;
+}
+
+.btn--outline {
+	background-color: transparent;
+	color: #FFFFFF;
+	border: 2px solid #FFFFFF;
+}
+
+.btn--outline:hover {
+	background-color: #FFFFFF;
+	color: var(--component-accent);
+}
+
+/* HERO SECTION */
+.hero {
+	position: relative;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/images/school-bldg.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 65vh;
+	min-height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 0 20px;
+}
+
+.hero__content {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.hero__title {
+	font-family: "Poppins", sans-serif;
+	font-size: clamp(2.2rem, 5vw, 3.8rem);
+	font-weight: 800;
+	line-height: 1.2;
+	margin-bottom: 16px;
+	color: var(--component-bg);
+}
+
+.hero__subtitle {
+	font-size: clamp(1rem, 2vw, 1.2rem);
+	margin-bottom: 32px;
+	line-height: 1.6;
+}
+
+.hero__actions {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+}
+
+/* SCHOOL POPULATION */
+.portals {
+	background-color: transparent;
+	margin-top: -50px;
+	position: relative;
+	z-index: 10;
+}
+
+.portals__container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+.portal-card {
+	background-color: #FFFFFF;
+	padding: 24px;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+	border-bottom: 5px solid var(--component-bg);
+	transition: transform 0.3s ease;
+}
+
+.portal-card:hover {
+	transform: translateY(-6px);
+}
+
+.portal-card__icon i {
+	font-size: 2rem;
+	color: var(--component-accent);
+	margin-bottom: 10px;
+}
+
+.portal-card__title {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.8rem;
+	font-weight: 800;
+	color: var(--component-accent);
+}
+
+.portal-card__desc {
+	font-size: 0.8rem;
+	font-weight: 600;
+	color: var(--text-muted);
+	text-transform: uppercase;
+}
+
+/* SCHOOL NEWS & SCHOOL BULLETIN (CAROUSEL LAYOUT) */
+.bulletin-section {
+	max-width: 1200px;
+	margin: 70px auto 10px;
+	padding: 0 20px;
+}
+
+.bulletin-section--alt {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.bulletin__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.bulletin__controls {
+	display: flex;
+	gap: 10px;
+}
+
+.bulletin__arrow {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	border: 1.5px solid var(--component-accent);
+	background: #FFFFFF;
+	color: var(--component-accent);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.bulletin__arrow:hover {
+	background: var(--component-accent);
+	color: #FFFFFF;
+}
+
+.bulletin__track {
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	padding-bottom: 16px;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bulletin__track::-webkit-scrollbar {
+	height: 6px;
+}
+
+.bulletin__track::-webkit-scrollbar-thumb {
+	background: var(--component-border);
+	border-radius: 4px;
+}
+
+.bulletin-card {
+	flex: 0 0 320px;
+	scroll-snap-align: start;
+	background: #FFFFFF;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+}
+
+.bulletin-card:hover {
+	transform: translateY(-4px);
+}
+
+.bulletin-card__image-wrapper {
+	width: 100%;
+	height: 180px;
+}
+
+.bulletin-card__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.bulletin-card__content {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.bulletin-card__category {
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: var(--component-accent);
+	text-transform: uppercase;
+}
+
+.bulletin-card__title a {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: var(--text-main);
+	text-decoration: none;
+	line-height: 1.3;
+}
+
+.bulletin-card__summary {
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	line-height: 1.4;
+}
+
+.bulletin-card__date {
+	font-size: 0.75rem;
+	color: #777;
+	margin-top: 6px;
+}
+
+/* SCHOOL CALENDAR */
+.calendar-section {
+	background-color: #FFFFFF;
+	border-top: 1px solid #EAEAEA;
+	border-bottom: 1px solid #EAEAEA;
+	padding: 60px 0;
+}
+
+.calendar__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.calendar__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 30px;
+}
+
+.calendar__subtitle {
+	font-size: 0.9rem;
+	color: var(--text-muted);
+}
+
+.calendar__month-selector {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: #F0F4FF;
+	padding: 6px 14px;
+	border-radius: 8px;
+}
+
+.calendar__current-month {
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	color: var(--component-accent);
+}
+
+.calendar__month-btn {
+	background: none;
+	border: none;
+	color: var(--component-accent);
+	cursor: pointer;
+}
+
+.calendar__wrapper {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 40px;
+}
+
+.calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+	text-align: center;
+}
+
+.calendar-day-header {
+	font-weight: 700;
+	font-size: 0.85rem;
+	color: var(--component-accent);
+	padding-bottom: 8px;
+}
+
+.calendar-day {
+	background: #F7F7F8;
+	padding: 16px 8px;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	position: relative;
+	min-height: 55px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.calendar-day.is-empty {
+	background: transparent;
+}
+
+.calendar-day.has-event {
+	background: #EAF0FF;
+	color: var(--component-accent);
+	border: 1px solid var(--component-accent);
+	cursor: pointer;
+}
+
+.event-dot {
+	width: 6px;
+	height: 6px;
+	background-color: var(--component-accent);
+	border-radius: 50%;
+}
+
+.calendar__highlights {
+	background: #F7F7F8;
+	padding: 24px;
+	border-radius: 12px;
+}
+
+.calendar__highlights-title {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.1rem;
+	color: var(--component-accent);
+	margin-bottom: 16px;
+}
+
+.calendar__event-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.calendar-event-item {
+	display: flex;
+	gap: 14px;
+	align-items: center;
+	background: #FFFFFF;
+	padding: 12px;
+	border-radius: 8px;
+}
+
+.event-date-badge {
+	background: var(--component-bg);
+	border: 1px solid var(--component-border);
+	padding: 6px 10px;
+	border-radius: 6px;
+	text-align: center;
+}
+
+.event-date-badge span {
+	display: block;
+	font-size: 0.65rem;
+	font-weight: 700;
+}
+
+.event-date-badge strong {
+	display: block;
+	font-family: "Poppins", sans-serif;
+	font-size: 1.1rem;
+	color: var(--component-accent);
+}
+
+.event-info h4 {
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.event-info p {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+}
+
+/* COMMUNITY SPOTLIGHT */
+.spotlight__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 80px 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+}
+
+.video-container {
+	position: relative;
+	width: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+	aspect-ratio: 16 / 9;
+	background: #000;
+}
+
+.video-container__video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.testimonial-carousel {
+	background-color: #F7F7F8;
+	padding: 30px;
+	border-radius: 12px;
+}
+
+.testimonial-card__quote-icon i {
+	font-size: 2rem;
+	color: var(--component-border);
+	margin-bottom: 12px;
+}
+
+.testimonial-card__text {
+	font-size: 1rem;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+
+.testimonial-card__author {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.testimonial-card__avatar {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.testimonial-carousel__controls {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.testimonial-carousel__arrow {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: 1px solid var(--component-accent);
+	background: #FFF;
+	color: var(--component-accent);
+}
+
+.testimonial-carousel__dots {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.testimonial-carousel__dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #CCC;
+	border: none;
+}
+
+.testimonial-carousel__dot.is-active {
+	background: var(--component-accent);
+}
 
 /* FOOTER */
 .footer {
 	background-color: var(--component-bg);
 	border-top: 2px solid var(--component-border);
 	width: 100%;
-	padding: 16px 20px;
+	padding: 24px 20px 16px;
 }
 
 .footer-container {
@@ -317,30 +796,45 @@ section {}
 	width: 40px;
 	height: 40px;
 	background-color: transparent;
-	border: 1px solid var(--component-accent);
+	border: 1.5px solid var(--component-accent);
 	color: var(--component-accent);
 	cursor: pointer;
-	border-radius: 15%;
-	transition: all 0.1s ease-in-out;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
 }
 
 .back-to-top:hover {
 	background-color: var(--component-accent);
 	color: #FFFFFF;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 10px rgba(0, 61, 221, 0.25);
 }
 
-/* FOOTER COLUMNS LAYOUT */
+.footer-dividers {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	margin: 20px 0 16px 0;
+}
+
+.hairline-rule {
+	width: 100%;
+	height: 1px;
+	background-color: var(--component-border);
+}
+
 .footer-columns {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 24px;
-	padding: 16px 0;
+	gap: 28px;
+	padding: 20px 0;
 }
 
 .footer-col {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 10px;
 }
 
 .footer-col-title {
@@ -350,6 +844,7 @@ section {}
 	color: var(--component-accent);
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
+	margin-bottom: 2px;
 }
 
 .footer-col-text {
@@ -362,13 +857,15 @@ section {}
 .footer-col-list i {
 	color: var(--component-accent);
 	margin-right: 6px;
+	width: 14px;
+	text-align: center;
 }
 
 .footer-col-list {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: 6px;
+	gap: 8px;
 	font-size: 0.8rem;
 	color: var(--text-muted);
 }
@@ -379,30 +876,55 @@ section {}
 	line-height: 1.4;
 }
 
-/* Social links position below contacts */
-.footer-socials {
+.footer-col .social-links {
 	margin-top: 6px;
-}
-
-.footer-dividers {
-	display: flex;
-	flex-direction: column;
-	gap: 3px;
-	margin: 16px 0 12px 0;
-}
-
-.hairline-rule {
-	width: 100%;
-	height: 1px;
-	background-color: var(--component-border);
 }
 
 .footer-bottom {
 	display: flex;
 	justify-content: space-between;
-	font-size: 0.7rem;
+	align-items: center;
+	font-size: 0.75rem;
 	font-weight: 600;
 	color: rgba(0, 0, 0, 0.7);
 	letter-spacing: 0.5px;
+	padding-top: 4px;
 }
 
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+
+	.calendar__wrapper,
+	.spotlight__container {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.portals__container {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-top {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.footer-columns {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-bottom {
+		flex-direction: column;
+		gap: 8px;
+		text-align: center;
+	}
+}
