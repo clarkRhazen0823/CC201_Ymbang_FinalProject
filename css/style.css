@@ -26,9 +26,7 @@ body {
 	background-color: var(--component-bg);
 	border-bottom: 2px solid var(--component-border);
 	width: 100%;
-	position: sticky;
-	top: 0;
-	z-index: 1000;
+	position: static;
 }
 
 .header-container {
@@ -195,31 +193,6 @@ body {
 
 .navlinks a:hover::before {
 	width: 100%;
-}
-
-/* BURGER MENU BUTTON */
-.burger-menu {
-	display: none;
-	align-items: center;
-	justify-content: center;
-	width: 42px;
-	height: 42px;
-	background-color: transparent;
-	border: 1.5px solid var(--component-accent);
-	border-radius: 8px;
-	color: var(--component-accent);
-	font-size: 1.25rem;
-	cursor: pointer;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-	transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-	flex-shrink: 0;
-}
-
-.burger-menu:hover,
-.burger-menu.is-active {
-	background-color: var(--component-accent);
-	color: #FFFFFF;
-	box-shadow: 0 4px 10px rgba(0, 61, 221, 0.3);
 }
 
 /* MAIN CONTENT */
@@ -954,99 +927,6 @@ main {
 		flex-direction: column;
 		gap: 8px;
 		text-align: center;
-	}
-}
-
-/* MOBILE HEADER & BURGER MENU RESPONSIVENESS */
-@media (max-width: 820px) {
-	.header-container {
-		justify-content: space-between;
-		align-items: center;
-		padding: 8px 16px;
-	}
-
-	/* Hide the school name, social links, and hairline rule (only logo and burger menu remain visible) */
-	.header-top,
-	.header-right .hairline-rule {
-		display: none !important;
-	}
-
-	.header-right {
-		flex-grow: 0;
-	}
-
-	.header-bottom {
-		display: contents;
-	}
-
-	/* Show Burger Menu Button on the right */
-	.burger-menu {
-		display: flex;
-	}
-
-	/* Mobile Navigation Dropdown */
-	.navlinks {
-		display: none;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 100%;
-		background-color: #FFFFFF;
-		border-top: 2px solid var(--component-accent);
-		border-bottom: 3px solid var(--component-accent);
-		box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-		flex-direction: column;
-		align-items: stretch;
-		gap: 2px;
-		padding: 10px 16px;
-		z-index: 999;
-		animation: navSlideDown 0.25s ease-out forwards;
-	}
-
-	.navlinks.is-open {
-		display: flex;
-	}
-
-	.navlinks a {
-		padding: 12px 16px;
-		font-size: 0.95rem;
-		font-weight: 700;
-		color: var(--text-main);
-		border-radius: 8px;
-		transition: all 0.2s ease;
-		border-bottom: 1px solid #F0F0F2;
-	}
-
-	.navlinks a:last-child {
-		border-bottom: none;
-	}
-
-	.navlinks a::before {
-		display: none;
-	}
-
-	.navlinks a:hover {
-		background-color: #F0F4FF;
-		color: var(--component-accent);
-		transform: translateX(4px);
-	}
-
-	.navlinks a.active {
-		background-color: #EAF0FF;
-		color: var(--component-accent);
-		border-left: 4px solid var(--component-accent);
-		font-weight: 800;
-	}
-}
-
-@keyframes navSlideDown {
-	from {
-		opacity: 0;
-		transform: translateY(-8px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
 	}
 }
 
