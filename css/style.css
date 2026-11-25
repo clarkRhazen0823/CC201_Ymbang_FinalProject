@@ -338,14 +338,25 @@ main {
 
 /* SCHOOL NEWS & SCHOOL BULLETIN (CAROUSEL LAYOUT) */
 .bulletin-section {
-	max-width: 1200px;
-	margin: 70px auto 10px;
-	padding: 0 20px;
+	width: 100%;
+	background-color: #FFFFFF;
+	border-top: 1px solid #EAEAEA;
+	border-bottom: 1px solid #EAEAEA;
+	margin-top: 50px;
+	padding: 60px 0;
 }
 
 .bulletin-section--alt {
-	margin-top: 40px;
-	margin-bottom: 40px;
+	background-color: transparent;
+	border-top: none;
+	border-bottom: none;
+	margin-top: 0;
+}
+
+.bulletin__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
 }
 
 .bulletin__header {
@@ -399,6 +410,7 @@ main {
 	flex: 0 0 320px;
 	scroll-snap-align: start;
 	background: #FFFFFF;
+	border: 1px solid #EAEAEA;
 	border-radius: 4px;
 	overflow: hidden;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
